@@ -37,4 +37,36 @@ public class TaskManagerTest {
 
         verify(applicationConsoleMock, times(1)).showMessage("1totofalse");
     }
+
+    @Test
+    public void menuTest_remove(){
+        ApplicationConsole applicationConsoleMock = mock(ApplicationConsole.class);
+
+        when(applicationConsoleMock.readLine())
+                .thenReturn("add")
+                .thenReturn("1")
+                .thenReturn("toto")
+                .thenReturn("add")
+                .thenReturn("2")
+                .thenReturn("tutu")
+                .thenReturn("add")
+                .thenReturn("3")
+                .thenReturn("titi")
+                .thenReturn("remove")
+                .thenReturn("2")
+                .thenReturn("list")
+                .thenReturn("exit")
+        ;
+
+
+        TaskManager target = new TaskManager(applicationConsoleMock);
+        target.menu();
+
+        verify(applicationConsoleMock, times(1)).showMessage("1totofalse");
+        verify(applicationConsoleMock, times(1)).showMessage("3titifalse");
+
+
+    }
+
+
 }

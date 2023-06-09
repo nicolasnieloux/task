@@ -15,22 +15,28 @@ public class TaskManager {
             applicationConsole.showMessage("Enter a command: (add, remove, mark, list, exit, list)");
             String command = applicationConsole.readLine();
 
-            if (command.equals("add")){
+            if (command.equals("add")) {
                 applicationConsole.showMessage("Ajouter un id");
                 int id = Integer.parseInt(applicationConsole.readLine());
                 applicationConsole.showMessage("Ajouter un content");
                 String content = applicationConsole.readLine();
 
-                taskList.add(id,content,false);
+                taskList.add(id, content, false);
             }
 
-            if (command.equals("list")){
+            if (command.equals("list")) {
 
-                for (Task task: taskList.getTaskList()
-                     ) {
+                for (Task task : taskList.getTaskList()
+                ) {
                     applicationConsole.showMessage(task.toString());
 
                 }
+            }
+            if (command.equals("remove")) {
+
+                applicationConsole.showMessage("Supprimer grâce à l'id");
+                int id = Integer.parseInt(applicationConsole.readLine());
+                taskList.remove(id);
 
             }
             if (command.equals("exit")) {
@@ -38,4 +44,5 @@ public class TaskManager {
             }
         }
     }
+
 }
