@@ -28,7 +28,6 @@ public class Task {
     private String content;
     private boolean state;
 
-    public Task(){}
     public Task(int id, String content, boolean state) {
         this.id = id;
         this.content = content;

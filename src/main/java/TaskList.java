@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class TaskList {
 
@@ -21,22 +22,25 @@ public class TaskList {
     }
 
     public void remove(int id) {
-        for (Task task : getTaskList()
-        ) {
-            if (task.getId() == id) {
-                taskList.remove(task);
-            }
-        }
+
+        taskList.remove(findTaskById(id));
     }
 
-    public void update(int id){
+    public void update(int id) {
+
+        Objects.requireNonNull(findTaskById(id)).setState(!Objects.requireNonNull(findTaskById(id)).isState());
+
+    }
+
+    private Task findTaskById(int id) {
 
         for (Task task : getTaskList()
         ) {
             if (task.getId() == id) {
-                task.setState(!task.isState());
+                return task;
             }
         }
+        return null;
     }
 
 }

@@ -48,10 +48,10 @@ public class TaskListTest {
     public void test_update_status_task() {
         TaskList test = new TaskList();
 
-        test.add(1, "test", false); // index 0
+        test.add(1, "test", true); // index 0
 
         test.update(1);
-        Assertions.assertTrue(test.getTaskList().get(0).isState());
+        Assertions.assertFalse(test.getTaskList().get(0).isState());
 
     }
 }
