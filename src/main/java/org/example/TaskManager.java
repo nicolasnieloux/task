@@ -12,7 +12,7 @@ public class TaskManager {
 
     public void menu() {
         while (true) {
-            applicationConsole.showMessage("Enter a command: (add, remove, mark, list, exit, list)");
+            applicationConsole.showMessage("Enter a command: (add, remove, update, list, exit)");
             String command = applicationConsole.readLine();
 
             if (command.equals("add")) {
@@ -39,6 +39,15 @@ public class TaskManager {
                 taskList.remove(id);
 
             }
+
+            if (command.equals("update")) {
+
+                applicationConsole.showMessage("Modifier grâce à l'id");
+                int id = Integer.parseInt(applicationConsole.readLine());
+                taskList.update(id);
+
+            }
+
             if (command.equals("exit")) {
                 return;
             }

@@ -68,5 +68,24 @@ public class TaskManagerTest {
 
     }
 
+    @Test
+    public void menutest_update(){
+        ApplicationConsole applicationConsoleMock = mock(ApplicationConsole.class);
+
+        when(applicationConsoleMock.readLine())
+                .thenReturn("add")
+                .thenReturn("1")
+                .thenReturn("toto")
+                .thenReturn("update")
+                .thenReturn("1")
+                .thenReturn("list")
+                .thenReturn("exit")
+        ;
+        TaskManager target = new TaskManager(applicationConsoleMock);
+        target.menu();
+
+        verify(applicationConsoleMock, times(1)).showMessage("1tototrue");
+    }
+
 
 }
