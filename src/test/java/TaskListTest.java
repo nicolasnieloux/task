@@ -25,4 +25,23 @@ public class TaskListTest {
         Assertions.assertEquals(false, task_added.isState());
     }
 
+
+    @Test
+    public void test_remove_task(){
+
+        TaskList test = new TaskList();
+
+        test.add(1, "test", false); // index 0
+        test.add(2, "test", false); // index 1
+        test.add(3, "test", false); // index 2
+
+        //Je remove à l'id
+        test.remove(2);
+        Assertions.assertEquals(2, test.getTaskList().size());
+
+        Assertions.assertEquals(1, test.getTaskList().get(0).getId());
+        Assertions.assertEquals(3, test.getTaskList().get(1).getId());
+        
+    }
+
 }
