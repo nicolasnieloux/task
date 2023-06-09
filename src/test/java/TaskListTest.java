@@ -15,7 +15,7 @@ public class TaskListTest {
     }
 
     @Test
-    public void test_check_task_added(){
+    public void test_check_task_added() {
         TaskList test = new TaskList();
         test.add(1, "test", false);
 
@@ -27,7 +27,7 @@ public class TaskListTest {
 
 
     @Test
-    public void test_remove_task(){
+    public void test_remove_task() {
 
         TaskList test = new TaskList();
 
@@ -41,7 +41,17 @@ public class TaskListTest {
 
         Assertions.assertEquals(1, test.getTaskList().get(0).getId());
         Assertions.assertEquals(3, test.getTaskList().get(1).getId());
-        
+
     }
 
+    @Test
+    public void test_update_status_task() {
+        TaskList test = new TaskList();
+
+        test.add(1, "test", false); // index 0
+
+        test.update(1);
+        Assertions.assertTrue(test.getTaskList().get(0).isState());
+
+    }
 }

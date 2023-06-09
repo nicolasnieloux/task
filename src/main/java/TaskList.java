@@ -27,6 +27,16 @@ public class TaskList {
                 taskList.remove(task);
             }
         }
-
     }
+
+    public void update(int id){
+
+        for (Task task : getTaskList()
+        ) {
+            if (task.getId() == id) {
+                task.setState(!task.isState());
+            }
+        }
+    }
+
 }
