@@ -1,3 +1,7 @@
+package org.example;
+
+import org.example.Task;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;

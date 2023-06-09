@@ -1,4 +1,11 @@
+package org.example;
+
 public class Task {
+    @Override
+    public String toString() {
+        return id + "" + content + "" + state;
+    }
+
     private int id;
 
     public int getId() {

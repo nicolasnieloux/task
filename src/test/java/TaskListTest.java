@@ -1,3 +1,5 @@
+import org.example.Task;
+import org.example.TaskList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
